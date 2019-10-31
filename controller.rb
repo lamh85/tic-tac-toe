@@ -1,10 +1,13 @@
 module TicTacToe
   class Controller
+    attr_reader :board
 
-    def run
+    def run(board_size:)
+      new(board_size).run_for_reals
     end
 
-    def initialize
+    def initialize(board_size)
+      @board = Board.new(size: board_size)
     end
 
     private
